@@ -17,11 +17,11 @@ class SplashScreen extends StatelessWidget {
               ),
               WidgetIllustration(
                 image: "assets/splash_ilustration.png",
-                title: "Find your medical\nsolution",
-                subtitle1: "Consult with a doctor",
-                subtitle2: "whereever and whenever you want",
+                title: "Trouvez votre solution\nmédicale",
+                subtitle1: "Consultez un médecin",
+                subtitle2: "où et quand vous le souhaitez",
                 child: ButtonPrimary(
-                  text: "GET STARTED",
+                  text: "DÉMARRER",
                   onTap: () {
                     Navigator.push(
                         context,
