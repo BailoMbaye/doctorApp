@@ -1,4 +1,5 @@
 import 'package:doctor_reservation/theme.dart';
+import 'package:doctor_reservation/widget/button_primary.dart';
 import 'package:doctor_reservation/widget/general_logo_space.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,13 @@ class RegisterPages extends StatefulWidget {
 }
 
 class _RegisterPagesState extends State<RegisterPages> {
+  bool secureText = true;
+  showhide() {
+    setState(() {
+      secureText = !secureText;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -167,13 +175,54 @@ class _RegisterPagesState extends State<RegisterPages> {
                   ),
                   width: MediaQuery.of(context).size.width,
                   child: TextField(
+                    obscureText: secureText,
                     decoration: InputDecoration(
+                      suffixIcon: IconButton(
+                        onPressed: showhide,
+                        icon: secureText
+                            ? Icon(
+                                Icons.visibility_off,
+                                size: 18,
+                              )
+                            : Icon(
+                                Icons.visibility,
+                                size: 18,
+                              ),
+                      ),
                       border: InputBorder.none,
                       hintText: 'Mot de passe',
                       hintStyle: lightTextStyle.copyWith(
                           fontSize: 15, color: greyLightColor),
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: ButtonPrimary(
+                    text: "Enegistrer",
+                    onTap: () {},
+                  ),
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Avez-vous déjà un compte? ",
+                      style: lightTextStyle.copyWith(
+                          color: greyLightColor, fontSize: 15),
+                    ),
+                    Text(
+                      "Connectez-vous",
+                      style: boldTextStyle.copyWith(
+                          color: greenColor, fontSize: 15),
+                    ),
+                  ],
                 ),
               ],
             ),
