@@ -9,7 +9,7 @@ class GeneralLogoSpace extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 50,
+            height: 100,
           ),
           Image.asset(
             "assets/logo.png",
